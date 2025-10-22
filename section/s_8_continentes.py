@@ -54,9 +54,9 @@ def mostrar(df):
 
     # --- Mostrar tabla ---
     st.dataframe(
-        continent_counts.rename_axis("Continente")
-        .reset_index()
-        .rename(columns={"index": "Continente", "continent": "Continente", "continent_counts": "Usuarios", 0: "Usuarios"})
+        continent_counts
+            .rename(columns={'count': 'Usuarios', 'continent': 'Continente'})
+            .reset_index(drop=True)
     )
 
     # --- Gráfico circular ---
